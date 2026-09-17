@@ -243,15 +243,13 @@ camera → dual Hailo detectors → OCR/ReID → tracking/voting → dashboard.
 
 ## Project History
 
-This system went through roughly seven iterations before reaching the
+This system went through several iterations before reaching the
 architecture in this repo. It started as an OCR-only pipeline running
 entirely on CPU, then moved to a fully Hailo-accelerated OCR pipeline once
 the NPU toolchain was in place. From there it became a combined OCR + PPE
 system running on CPU-based ONNX models to prove out the joint pipeline
 logic, followed by an attempt at a single combined 4-class Hailo model that
 had to be abandoned after ONNX graph surgery and live testing showed it
-detecting almost nothing. The final architecture here — two separate
-2-class Hailo detectors, on-device OCR and person re-identification, head/
-body dedup, retuned tracking thresholds, and ISO 6346 checksum validation —
-is the result of that iterative process, each step driven by a concrete
-failure mode found on real hardware rather than a redesign for its own sake.
+detecting almost nothing. The final architecture here is the result of that
+process: each step was driven by a concrete failure mode found on real
+hardware, not a redesign for its own sake.
