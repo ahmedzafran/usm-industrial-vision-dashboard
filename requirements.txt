@@ -1,0 +1,29 @@
+# Pip-installable dependencies for the combined PPE + container-OCR dashboard.
+#
+# Detection (blurry_ocr_image/helmet/person/sharp_ocr_image), OCR
+# recognition, AND person re-identification all run on the Hailo NPU --
+# no Ultralytics/torch needed anywhere in this package.
+#
+# NOT listed here, on purpose:
+#   - opencv-python, numpy  -- already provided by the system Python (apt),
+#     inherited into the venv via --system-site-packages.
+#   - hailo_platform        -- NOT pip-installable. Comes from HailoRT's apt
+#     package (tied to the installed driver version). A venv (even with
+#     --system-site-packages) can't substitute for it -- run_dashboard.sh
+#     creates the venv with that flag for exactly this reason.
+#   - repvgg_a0_person_reid_512.hef -- NOT a pip/project artifact. Standard
+#     hailo-apps-infra resource, expected at
+#     /usr/local/hailo/resources/models/hailo10h/. reid_engine.py degrades
+#     to tracker-only counting (no crash) if it's missing.
+#
+# Install:
+#   python3 -m venv --system-site-packages myenv_combined_dashboard
+#   source myenv_combined_dashboard/bin/activate
+#   pip install -r requirements.txt
+#   python3 dashboard.py
+# (run_dashboard.sh does all of the above for you)
+
+nicegui
+scipy
+shapely
+pyclipper
