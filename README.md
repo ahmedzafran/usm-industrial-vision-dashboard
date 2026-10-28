@@ -257,6 +257,6 @@ hardware, not a redesign for its own sake.
 ## Acknowledgements
 
 This project was developed under the supervision of
-**Dr. Ahmad Sufril Azlan Mohamad** ([@DrSufril](https://github.com/DrSufril)),
+**Dr. Ahmad Sufril Azlan Mohamed** ([@DrSufril](https://github.com/DrSufril)),
 School of Computer Sciences, Universiti Sains Malaysia (USM).
 I am grateful for his guidance and support throughout the research and development of this work.
