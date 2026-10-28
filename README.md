@@ -253,3 +253,10 @@ had to be abandoned after ONNX graph surgery and live testing showed it
 detecting almost nothing. The final architecture here is the result of that
 process: each step was driven by a concrete failure mode found on real
 hardware, not a redesign for its own sake.
+
+## Acknowledgements
+
+This project was developed under the supervision of
+**Dr. Ahmad Sufril Azlan Mohamad** ([@DrSufril](https://github.com/DrSufril)),
+School of Computer Sciences, Universiti Sains Malaysia (USM).
+I am grateful for his guidance and support throughout the research and development of this work.
